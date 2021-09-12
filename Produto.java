@@ -34,4 +34,12 @@ public class Produto {
                 ", estoque=" + estoque +
                 '}';
     }
+
+    public void setEstoque(int estoque) {
+        this.estoque += estoque;
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
 }

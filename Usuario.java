@@ -1,7 +1,5 @@
 package Checkpoint1;
 
-import java.util.ArrayList;
-
 public abstract class Usuario {
 
     // Dados gerais de todos os usuarios do sistema, incluindo funcionario, cadastro de fornecedor e consumidor.
@@ -34,11 +32,11 @@ public abstract class Usuario {
     }
 
     // Métodos para serem subscritos na subclasse Funcionario
-    public void comprarFornecedor(Fornecedor fornecedor, Produto produto) {
+    public void comprarFornecedor(Fornecedor fornecedor, Produto produto, int quantidade) {
 
     }
 
-    public void venderConsumidor() {
+    public void venderConsumidor(Consumidor consumidor, Produto produto, int quantidade) {
 
     }
 

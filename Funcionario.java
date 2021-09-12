@@ -1,7 +1,5 @@
 package Checkpoint1;
 
-import java.util.ArrayList;
-
 public class Funcionario extends Usuario {
 
     private String cargo;
@@ -17,8 +15,10 @@ public class Funcionario extends Usuario {
 
     // Subscrição dos métodos na superclasse para realizar a compra e venda dos produtos.
     @Override
-    public void comprarFornecedor (Fornecedor fornecedor, Produto produto) {
-
+    public void comprarFornecedor (Fornecedor fornecedor, Produto produto, int quantidade) {
+        // É necessário um método para acrescenter estoque.
+        // Provavelmente, será necessário criar uma parâmetro para acrescentar no Estoque.
+        produto.setEstoque(quantidade);
         fornecedor.setProdutos(produto);
 
 
@@ -26,7 +26,16 @@ public class Funcionario extends Usuario {
 
 
     @Override
-    public void venderConsumidor () {
+    public void venderConsumidor (Consumidor consumidor, Produto produto, int quantidade) {
+        // método de checar Estoque antes de realizar a venda.
+
+        if (quantidade > produto.getEstoque()) {
+            System.out.println("A venda não pode ser realizada, uma vez que só tem " + produto.getEstoque() + " peças disponíveis no estoque.");
+        } else {
+            produto.setEstoque(-(quantidade));
+            consumidor.setProdutos(produto);
+
+        }
 
     }
 

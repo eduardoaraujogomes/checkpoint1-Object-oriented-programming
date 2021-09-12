@@ -1,13 +1,14 @@
 package Checkpoint1;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Fornecedor extends Usuario {
-    private ArrayList<Produto> produtos; // Cada compra realizada ao fornecedor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
+    private HashSet<Produto> produtos; // Cada compra realizada ao fornecedor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
 
     Fornecedor(String nome, String cpf_cnpj, String endereco, String contato, String email) {
         super(nome, cpf_cnpj, endereco, contato, email);
-        this.produtos = new ArrayList<>();
+        this.produtos = new HashSet<>();
     }
 
     public void checkCompras() {
