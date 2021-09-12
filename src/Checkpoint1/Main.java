@@ -6,7 +6,7 @@ public class Main {
 
         System.out.println("Teste");
 
-        Usuario fornecedor1 = new Fornecedor("Belenus", "123", "SP", "11 555", "belenus@belenus");
+        Fornecedor fornecedor1 = new Fornecedor("Belenus", "123", "SP", "11 555", "belenus@belenus");
 
         Usuario funcionario1 = new Funcionario("Gustavo", "123", "Salvador", "123", "gustavo@geral", "Administrador", "123", 1);
 
@@ -18,6 +18,10 @@ public class Main {
 
         System.out.println(produto1.toString());
 
+        funcionario1.comprarFornecedor(fornecedor1, produto1);
+        funcionario1.comprarFornecedor(fornecedor1, produto1);
+        funcionario1.comprarFornecedor(fornecedor1, produto1);
+        System.out.println(fornecedor1.toString());
 
 
     }

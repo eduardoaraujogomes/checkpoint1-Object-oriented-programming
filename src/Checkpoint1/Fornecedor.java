@@ -3,7 +3,7 @@ package Checkpoint1;
 import java.util.ArrayList;
 
 public class Fornecedor extends Usuario {
-    private ArrayList<ArrayList<Produto>> produtos; // Cada compra realizada ao fornecedor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
+    private ArrayList<Produto> produtos; // Cada compra realizada ao fornecedor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
 
     Fornecedor(String nome, String cpf_cnpj, String endereco, String contato, String email) {
         super(nome, cpf_cnpj, endereco, contato, email);
@@ -14,7 +14,8 @@ public class Fornecedor extends Usuario {
 
     }
 
-    public void setProdutos(ArrayList<Produto> produto) {
+    public void setProdutos(Produto produto) {
+
         this.produtos.add(produto);
     }
 
@@ -24,7 +25,7 @@ public class Fornecedor extends Usuario {
                 ", cpf_cnpj=" + cpf_cnpj +
                 ", endereco=" + endereco +
                 ", contato=" + contato +
-                ", email" + email +
+                ", email=" + email +
                 ", produtos=" + produtos + '}';
     }
 }

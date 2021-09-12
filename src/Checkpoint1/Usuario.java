@@ -34,7 +34,7 @@ public abstract class Usuario {
     }
 
     // Métodos para serem subscritos na subclasse Funcionario
-    public void comprarFornecedor(Fornecedor fornecedor, ArrayList<Produto> produto) {
+    public void comprarFornecedor(Fornecedor fornecedor, Produto produto) {
 
     }
 

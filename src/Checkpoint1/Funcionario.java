@@ -17,9 +17,9 @@ public class Funcionario extends Usuario {
 
     // Subscrição dos métodos na superclasse para realizar a compra e venda dos produtos.
     @Override
-    public void comprarFornecedor (Fornecedor fornecedor, ArrayList<Produto> produtoCompra) {
+    public void comprarFornecedor (Fornecedor fornecedor, Produto produto) {
 
-        fornecedor.setProdutos(produtoCompra);
+        fornecedor.setProdutos(produto);
 
 
     }
