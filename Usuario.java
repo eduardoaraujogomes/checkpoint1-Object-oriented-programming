@@ -1,13 +1,15 @@
 package Checkpoint1;
 
+import java.util.ArrayList;
+
 public abstract class Usuario {
 
     // Dados gerais de todos os usuarios do sistema, incluindo funcionario, cadastro de fornecedor e consumidor.
-    private String nome;
-    private String cpf_cnpj;
-    private String endereco;
-    private String contato;
-    private String email;
+    protected String nome;
+    protected String cpf_cnpj;
+    protected String endereco;
+    protected String contato;
+    protected String email;
 
     Usuario (String nome, String cpf_cnpj, String endereco, String contato, String email) {
         this.nome = nome;
@@ -18,8 +20,21 @@ public abstract class Usuario {
 
     }
 
-    // Métodos para serem subscritos na subclasse Usuario
-    public void comprarFornecedor() {
+    Usuario(String nome, String cpf_cnpj, String contato) {
+        this.nome = nome;
+        this.cpf_cnpj = cpf_cnpj;
+        this.contato = contato;
+    }
+
+    Usuario(String nome, String cpf_cnpj, String contato, String email) {
+        this.nome = nome;
+        this.cpf_cnpj = cpf_cnpj;
+        this.contato = contato;
+        this.email = email;
+    }
+
+    // Métodos para serem subscritos na subclasse Funcionario
+    public void comprarFornecedor(Fornecedor fornecedor, ArrayList<Produto> produto) {
 
     }
 

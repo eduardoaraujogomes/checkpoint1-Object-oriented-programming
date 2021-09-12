@@ -23,4 +23,15 @@ public class Produto {
     public void checkVendas() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", comprimento='" + comprimento + '\'' +
+                ", largura='" + largura + '\'' +
+                ", preco=" + preco +
+                ", estoque=" + estoque +
+                '}';
+    }
 }
