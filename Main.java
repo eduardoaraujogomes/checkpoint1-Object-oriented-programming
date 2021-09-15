@@ -97,7 +97,7 @@ public class Main {
 
     private static void cadastrarProduto() {
         Scanner input = new Scanner(System.in);
-        System.out.print("Digite o nome: ");
+        System.out.print("Digite a descrição: ");
         String nome = input.nextLine();
 
         System.out.print("Digite o comprimento: ");

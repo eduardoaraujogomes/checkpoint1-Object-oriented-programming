@@ -27,6 +27,18 @@
 	do produto no sistema;
 
 ## Sugestões de informações:
+	Sugestões de informações para o cadastro de produtos:
 	
+	Descrição: Parafuso Aço Carbono Sextavado
+	Comprimento: 1/4
+	Largura: 2/4
+	Preço: 1,99
+	Estoque: 100
+
+	Descrição: Arruela Lisa Inox
+	Comprimento: 1/8
+	Largura: 1
+	Preço: 0,55
+	Estoque: 500
 
 
