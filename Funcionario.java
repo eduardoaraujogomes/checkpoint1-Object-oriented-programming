@@ -18,6 +18,7 @@ public class Funcionario extends Usuario {
 
 
     // Subscrição dos métodos na superclasse para realizar a compra e venda dos produtos.
+    // Essas compras e vendas são realizadas pelo funcionário da empresa.
     @Override
     public void comprarFornecedor (Fornecedor fornecedor, Produto produto, int quantidade) {
         // É necessário um método para acrescenter estoque.

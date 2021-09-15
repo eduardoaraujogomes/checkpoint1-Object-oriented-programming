@@ -27,6 +27,7 @@ public class Fornecedor extends Usuario {
 
     }
 
+    // Método que inclui produtos vendidos pelo fornecedor no sistema.
     public void setProdutos(Produto produto) {
 
         this.produtos.add(produto);

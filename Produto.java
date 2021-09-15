@@ -35,18 +35,22 @@ public class Produto {
                 '}';
     }
 
+    // Esse método permite que se realize ajustes no estoque enquanto se realiza das vendas ou compras dos produtos.
     public void setEstoque(int estoque) {
         this.estoque += estoque;
     }
 
+    // Método GET que auxilia na verificação do estoque.
     public int getEstoque() {
         return estoque;
     }
 
+    // Método GET que informa o nome do produto.
     public String getNome() {
         return nome;
     }
 
+    // Métodos GET não utilizados neste código.
     public String getComprimento() {
         return comprimento;
     }

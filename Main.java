@@ -1,6 +1,5 @@
 package Checkpoint1;
 
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.*;
 
@@ -10,6 +9,14 @@ public class Main {
     static ArrayList<Fornecedor> fornecedores = new ArrayList<>();
     static ArrayList<Consumidor> consumidores = new ArrayList<>();
     static ArrayList<Produto> produtos = new ArrayList<>();
+    static ArrayList<Produto> listaProdutosVendaCompra = new ArrayList<>();
+
+    // Abaixo estãoa s funções aplicadas na main.
+
+    private static double calcValorTotal (int quantidade, double preco) {
+        return  quantidade * preco;
+
+    }
 
     private static void cadastrarFuncionario() {
         Scanner input = new Scanner(System.in);
@@ -133,10 +140,15 @@ public class Main {
         System.out.print("Qual a quantidade?: ");
         int quantidade = input.nextInt();
 
+        Produto produto = Main.produtos.get(produtoVenda);
+        listaProdutosVendaCompra.add(produto);
+
         Funcionario funcionario = Main.funcionarios.get(0);
         Consumidor consumidor = Main.consumidores.get(consumidorVenda);
-        Produto produto = Main.produtos.get(produtoVenda);
+
         funcionario.venderConsumidor(consumidor, produto, quantidade);
+
+        System.out.println("O valor total da venda foi de R$ " + calcValorTotal(quantidade, produto.getPreco()) + ". ");
 
         System.out.println("Venda realizada com sucesso!");
     }
@@ -161,6 +173,8 @@ public class Main {
         Fornecedor fornecedor = Main.fornecedores.get(fornecedorCompra);
         Produto produto = Main.produtos.get(produtoCompra);
         funcionario.comprarFornecedor(fornecedor, produto, quantidade);
+
+        System.out.println("O valor total da compra foi de R$ " + calcValorTotal(quantidade, produto.getPreco()) + ". ");
 
         System.out.println("Compra realizada com sucesso!");
     }

@@ -31,6 +31,7 @@ public class Consumidor extends Usuario {
 
     }
 
+    // Método que inclui produtos comprados pelo consumidor no sistema.
     public void setProdutos(Produto produto) {
 
         this.produtos.add(produto);
