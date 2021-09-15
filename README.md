@@ -1,24 +1,24 @@
 # Checkpoint I - POO
 
 ## Integrantes
-[Eduardo de Araújo](https://github.com/eduardoaraujogomes)
-[Gustavo Barretto](https://github.com/gustavobarretto)
+- [Eduardo de Araújo](https://github.com/eduardoaraujogomes)
+- [Gustavo Barretto](https://github.com/gustavobarretto)
 
 
 ## Problema
 ### Caso hipótetico (contexto):
-- Um gestor gostaria de um novo sistema que pudesse realizar 
-- o registro de todos os seus funcionários, clientes e fornecedores. 
-- O sistema também deve fazer a verificação do estoque e realizar 
-- a compra e vendas dos produtos.
+- Um gestor gostaria de um novo sistema que pudesse realizar o registro de todos os seus funcionários, clientes e fornecedores. 
+- O sistema também deve fazer a verificação do estoque e realizar a compra e vendas dos produtos.
 
 ## Cenário
-- A aplicação é estrutura em um sistema com menu onde se pode 
-- realizar o cadastro de funcionários, o cadastro de clientes, 
-- o cadastro de produtos, a venda a clientes e a compra de materiais em fornecedores.
+A aplicação é estrutura em um sistema com menu onde se pode  
+realizar o cadastro de funcionários, o cadastro de clientes,  
+o cadastro de produtos, a venda a clientes e a compra de materiais em fornecedores.  
 
 ## Diagrama UML
-![Diagrama UML](https://i.imgur.com/4Qga2w2.jpg)
+
+![Diagrama UML](https://i.imgur.com/4Qga2w2.jpg){width=50%}
+
 
 ## Requisitos:
 
