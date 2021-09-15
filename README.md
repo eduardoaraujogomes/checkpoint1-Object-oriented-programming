@@ -17,17 +17,17 @@ o cadastro de produtos, a venda a clientes e a compra de materiais em fornecedor
 
 ## Diagrama UML
 
-![Diagrama UML](https://i.imgur.com/4Qga2w2.jpg){width=50%}
+![Diagrama UML](https://i.imgur.com/4Qga2w2.jpg)*Diagrama UML*
 
 
 ## Requisitos:
 
-1.  Para se realizar uma venda, deve-se informar, pelo menos, o consumidor, o produto que está sendo vendido e a quantidade;
-2.  Caso não haja estoque, o sistema informará;
-3.  Caso queira verificar a lista de produtos ou clientes, responda com S quando o sistema perguntar;
-4.  Para realizar uma compra, deve-se informar, pelo menos, o fornecedor, o produto e a quantidade que será vendido;
-5.  Só é possível comprar com o fornecedor se houver cadastro do produto do sistema;
-6.  Só é possível vender com o fornecedor se houver cadastro do produto no sistema;
+1.  Para se **realizar uma venda**, deve-se informar, pelo menos, o consumidor, o produto que está sendo vendido e a quantidade;
+2.  **Caso não haja estoque**, o sistema informará;
+3.  Caso queira **verificar a lista de produtos ou clientes**, responda com S quando o sistema perguntar;
+4.  Para **realizar uma compra**, deve-se informar, pelo menos, o fornecedor, o produto e a quantidade que será vendido;
+5.  Só é possível **comprar com o fornecedor** se houver cadastro do produto do sistema;
+6.  Só é possível **vender com o fornecedor** se houver cadastro do produto no sistema;
 
 ## Sugestões de informações:
 ### Sugestões de informações para o cadastro de produtos:
