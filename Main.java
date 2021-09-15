@@ -1,45 +1,290 @@
 package Checkpoint1;
 
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.*;
+
 public class Main {
 
+    static ArrayList<Funcionario> funcionarios = new ArrayList<>();
+    static ArrayList<Fornecedor> fornecedores = new ArrayList<>();
+    static ArrayList<Consumidor> consumidores = new ArrayList<>();
+    static ArrayList<Produto> produtos = new ArrayList<>();
+
+    private static void cadastrarFuncionario() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o nome: ");
+        String nome = input.nextLine();
+
+        System.out.print("Digite o CPF: ");
+        String cpf = input.next();
+
+        System.out.print("Digite o endereço: ");
+        String endereco = input.nextLine();
+        input.nextLine();
+
+        System.out.print("Digite o contato: ");
+        String contato = input.nextLine();
+
+        System.out.print("Digite o e-mail: ");
+        String email = input.nextLine();
+
+        System.out.print("Escolha uma senha: ");
+        String senha = input.nextLine();
+
+        System.out.print("Digite o cargo: ");
+        String cargo = input.nextLine();
+
+        System.out.print("Escolha o nível de acesso de 1 a 9: ");
+        int acesso = input.nextInt();
+
+        Funcionario funcionario = new Funcionario(nome, cpf, endereco, contato, email, senha, cargo, acesso);
+        funcionarios.add(funcionario);
+        System.out.println("Funcionário cadastrado com sucesso!");
+
+    }
+
+    private static void cadastrarFornecedor() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o nome: ");
+        String nome = input.nextLine();
+
+        System.out.print("Digite o CPF: ");
+        String cpf = input.next();
+
+        System.out.print("Digite o endereço: ");
+        String endereco = input.nextLine();
+        input.nextLine();
+
+        System.out.print("Digite o contato: ");
+        String contato = input.nextLine();
+
+        System.out.print("Digite o e-mail: ");
+        String email = input.nextLine();
+
+        Fornecedor fornecedor = new Fornecedor(nome, cpf, endereco, contato, email);
+        fornecedores.add(fornecedor);
+        System.out.println("Fornecedor cadastrado com sucesso!");
+
+    }
+
+    private static void cadastrarConsumidor() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o nome: ");
+        String nome = input.nextLine();
+
+        System.out.print("Digite o CPF: ");
+        String cpf = input.next();
+
+        System.out.print("Digite o endereço: ");
+        String endereco = input.nextLine();
+        input.nextLine();
+
+        System.out.print("Digite o contato: ");
+        String contato = input.nextLine();
+
+        System.out.print("Digite o e-mail: ");
+        String email = input.nextLine();
+
+        Consumidor consumidor = new Consumidor(nome, cpf, endereco, contato, email);
+
+        consumidores.add(consumidor);
+        System.out.println("Consumidor cadastrado com sucesso!");
+
+    }
+
+    private static void cadastrarProduto() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o nome: ");
+        String nome = input.nextLine();
+
+        System.out.print("Digite o comprimento: ");
+        String comprimento = input.next();
+
+        System.out.print("Digite a largura: ");
+        String largura = input.nextLine();
+        input.nextLine();
+
+        System.out.print("Digite o preço: ");
+        double preco = input.nextDouble();
+
+        System.out.print("Digite o estoque: ");
+        int estoque = input.nextInt();
+
+        Produto produto = new Produto(nome, comprimento, largura, preco, estoque);
+        produtos.add(produto);
+        System.out.println("Produto cadastrado com sucesso!");
+
+    }
+
+    public static void realizarVenda() {
+
+        listaConsumidor();
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Qual é o consumidor?: ");
+        int consumidorVenda = input.nextInt();
+
+        listaProdutos();
+
+        System.out.print("Qual é o produto?: ");
+        int produtoVenda = input.nextInt();
+
+        System.out.print("Qual a quantidade?: ");
+        int quantidade = input.nextInt();
+
+        Funcionario funcionario = Main.funcionarios.get(0);
+        Consumidor consumidor = Main.consumidores.get(consumidorVenda);
+        Produto produto = Main.produtos.get(produtoVenda);
+        funcionario.venderConsumidor(consumidor, produto, quantidade);
+
+        System.out.println("Venda realizada com sucesso!");
+    }
+
+    public static void realizarCompra() {
+
+        listaFornecedor();
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Qual é o fornecedor?: ");
+        int fornecedorCompra = input.nextInt();
+
+        listaProdutos();
+
+        System.out.print("Qual é o produto?: ");
+        int produtoCompra = input.nextInt();
+
+        System.out.print("Qual a quantidade?: ");
+        int quantidade = input.nextInt();
+
+        Funcionario funcionario = Main.funcionarios.get(0);
+        Fornecedor fornecedor = Main.fornecedores.get(fornecedorCompra);
+        Produto produto = Main.produtos.get(produtoCompra);
+        funcionario.comprarFornecedor(fornecedor, produto, quantidade);
+
+        System.out.println("Compra realizada com sucesso!");
+    }
+
+    public static void verificarEstoque() {
+        System.out.println("====================================ESTOQUE====================================");
+        System.out.println("===NOME======================================================QUANTIDADE========");
+        for (Produto produto : produtos) {
+            System.out.println(produto.getNome() + "       " + produto.getEstoque());
+        }
+        System.out.println("====================================ESTOQUE====================================");
+    }
+
+    public static void listaFornecedor() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Gostaria de ver a lista de fornecedores? [S/N]");
+        char awnser = input.next().charAt(0);
+        if (awnser == 'S') {
+            System.out.println("====================================FORNECEDORES====================================");
+            for (Fornecedor fornecedor : fornecedores) {
+
+                System.out.println(fornecedores.indexOf(fornecedor) + " - " + fornecedor.getNome());
+
+            }
+            System.out.println("====================================================================================");
+        }
+
+    }
+
+    public static void listaProdutos() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Gostaria de ver a lista de produtos? [S/N]");
+        char awnser = input.next().charAt(0);
+        if (awnser == 'S') {
+            System.out.println("====================================PRODUTOS========================================");
+            for (Produto produto : produtos) {
+
+                System.out.println(produtos.indexOf(produto) + " - " + produto.getNome() + " - QNTD = " + produto.getEstoque());
+
+            }
+            System.out.println("====================================================================================");
+        }
+
+    }
+
+    public static void listaConsumidor() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Gostaria de ver a lista de clientes? [S/N]");
+        char awnser = input.next().charAt(0);
+        if (awnser == 'S') {
+            System.out.println("====================================CLIENTES========================================");
+            for (Consumidor consumidor : consumidores) {
+
+                System.out.println(consumidores.indexOf(consumidor) + " - " + consumidor.getNome());
+
+            }
+            System.out.println("====================================================================================");
+        }
+
+    }
+
     public static void main(String[] args) {
+        boolean variable = true;
 
-        System.out.println("Teste");
+        while (variable) {
 
-        Fornecedor fornecedor1 = new Fornecedor("Belenus", "123", "SP", "11 555", "belenus@belenus");
+            System.out.println("=========== MENU DO SISTEMA =========== ");
+            System.out.println("Digite o que deseja fazer no sistema: \n" +
+                                "\t1 - Cadastro de Funcionário\n" +
+                                "\t2 - Cadastro de Fornecedor\n" +
+                                "\t3 - Cadastro de Cliente\n" +
+                                "\t4 - Cadastrar Produto\n" +
+                                "\t5 - Realizar Venda\n" +
+                                "\t6 - Realizar Compra\n" +
+                                "\t7 - Verificar Estoque\n" +
+                                "\t9 - Sair\n");
+            System.out.print("Resposta: ");
+            Scanner input = new Scanner(System.in);
+            int awnser = input.nextInt();
 
-        Usuario funcionario1 = new Funcionario("Gustavo", "123", "Salvador", "123", "gustavo@geral", "Administrador", "123", 1);
+            switch (awnser) {
 
-        Produto produto1 = new Produto("Parafuso sextavado aço carbono rosca total", "3", "4", 1.99, 100);
+                case 1:
+                    Main.cadastrarFuncionario();
+                    break;
 
-        Consumidor consumidor1 = new Consumidor("Eduardo", "123", "40");
+                case 2:
+                    Main.cadastrarFornecedor();
+                    break;
 
-        System.out.println(fornecedor1.toString());
+                case 3:
+                    Main.cadastrarConsumidor();
+                    break;
 
-        System.out.println(funcionario1.toString());
+                case 4:
+                    Main.cadastrarProduto();
+                    break;
 
-        System.out.println(produto1.toString());
+                case 5:
+                    realizarVenda();
+                    break;
 
-        funcionario1.comprarFornecedor(fornecedor1, produto1, 10);
-        funcionario1.comprarFornecedor(fornecedor1, produto1, 15);
-        funcionario1.comprarFornecedor(fornecedor1, produto1, 25);
-        System.out.println(fornecedor1.toString());
+                case 6:
+                    realizarCompra();
+                    break;
 
-        System.out.println(produto1.toString());
+                case 7:
+                    verificarEstoque();
+                    break;
 
-        funcionario1.venderConsumidor(consumidor1, produto1, 125);
+                case 8:
 
-        System.out.println(produto1.toString());
-
-        System.out.println(consumidor1.toString());
-
-        funcionario1.venderConsumidor(consumidor1, produto1, 50);
-
-        System.out.println(produto1.toString());
-
-
+                case 9:
+                    System.out.println("=========== PROGRAMA ENCERRADO ===========");
+                    variable = false;
+                    break;
 
 
+                default:
+                    System.out.println("Opção inválida. Digite uma opção válida.");
+
+            }
+
+        }
     }
 
 }

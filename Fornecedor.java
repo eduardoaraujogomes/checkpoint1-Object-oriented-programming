@@ -4,14 +4,26 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Fornecedor extends Usuario {
-    private HashSet<Produto> produtos; // Cada compra realizada ao fornecedor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
+    private ArrayList<Produto> produtos; // Cada compra realizada ao fornecedor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
 
     Fornecedor(String nome, String cpf_cnpj, String endereco, String contato, String email) {
         super(nome, cpf_cnpj, endereco, contato, email);
-        this.produtos = new HashSet<>();
+        this.produtos = new ArrayList<>();
     }
 
-    public void checkCompras() {
+    public void checkVendas() {
+
+        System.out.println("O fornecedor " + this.nome + " vendeu para a loja " + produtos.size() + " vez(es).");
+
+    }
+
+    public void checkProdutosComprados () {
+
+        System.out.println("==============LISTA DOS PRODUTOS COMPRADOS==============");
+
+        for (Produto produto : produtos) {
+            System.out.println(produto.getNome() + "        " + produto.getEstoque());
+        }
 
     }
 
@@ -29,4 +41,6 @@ public class Fornecedor extends Usuario {
                 ", email=" + email +
                 ", produtos=" + produtos + '}';
     }
+
+
 }

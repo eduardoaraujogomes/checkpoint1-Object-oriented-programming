@@ -42,4 +42,20 @@ public class Produto {
     public int getEstoque() {
         return estoque;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getComprimento() {
+        return comprimento;
+    }
+
+    public String getLargura() {
+        return largura;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
 }

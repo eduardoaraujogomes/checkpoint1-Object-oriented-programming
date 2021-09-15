@@ -4,28 +4,30 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Consumidor extends Usuario {
-    private HashSet produtos; // Cada venda realizada ao consumidor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
+    private ArrayList<Produto> produtos; // Cada venda realizada ao consumidor gera a inclusão de um ou do mesmo Objeto Produto neste atributo Array.
 
     Consumidor(String nome, String cpf_cnpj, String endereco, String contato, String email) {
         super(nome, cpf_cnpj, endereco, contato, email);
-        this.produtos = new HashSet<>();
+        this.produtos = new ArrayList<>();
 
     }
 
     Consumidor(String nome, String cpf_cnpj, String contato) {
         super(nome, cpf_cnpj, contato);
-        this.produtos = new HashSet<>();
+        this.produtos = new ArrayList<>();
 
     }
 
     Consumidor(String nome, String cpf_cnpj, String contato, String email) {
         super(nome, cpf_cnpj, contato, email);
-        this.produtos = new HashSet<>();
+        this.produtos = new ArrayList<>();
 
     }
 
     // Método que verifica todas as vendas
-    public void checkVendas() {
+    public void checkCompras() {
+
+        System.out.println("O consumidor " + this.nome + " já comprou na loja " + produtos.size() + " vez(es).");
 
     }
 

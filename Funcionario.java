@@ -1,10 +1,13 @@
 package Checkpoint1;
 
+import java.util.HashSet;
+
 public class Funcionario extends Usuario {
 
     private String cargo;
     private String senha;
     private int acesso;
+    private HashSet<Funcionario> funcionarios;
 
     Funcionario(String nome, String cpf_cnpj, String endereco, String contato, String email, String cargo, String senha, int acesso) {
         super(nome, cpf_cnpj, endereco, contato, email);
@@ -12,6 +15,7 @@ public class Funcionario extends Usuario {
         this.senha = senha;
         this.acesso = acesso;
     }
+
 
     // Subscrição dos métodos na superclasse para realizar a compra e venda dos produtos.
     @Override

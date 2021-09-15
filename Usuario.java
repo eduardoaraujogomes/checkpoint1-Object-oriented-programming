@@ -1,5 +1,7 @@
 package Checkpoint1;
 
+import java.util.HashSet;
+
 public abstract class Usuario {
 
     // Dados gerais de todos os usuarios do sistema, incluindo funcionario, cadastro de fornecedor e consumidor.
@@ -40,4 +42,23 @@ public abstract class Usuario {
 
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf_cnpj() {
+        return cpf_cnpj;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public String getContato() {
+        return contato;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
