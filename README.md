@@ -13,6 +13,9 @@
 - o cadastro de produtos, a venda a clientes e a compra de materiais 
 - em fornecedores.
 
+## Diagrama UML
+[]('https://i.imgur.com/4Qga2w2.jpg')
+
 ## Requisitos:
 1. Para se realizar uma venda, deve-se informar, pelo menos, o consumidor, o produto que está sendo vendido e a quantidade;
 2. Caso não haja estoque, o sistema informará;
