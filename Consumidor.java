@@ -24,13 +24,6 @@ public class Consumidor extends Usuario {
 
     }
 
-    // Método que verifica todas as vendas
-    public void checkCompras() {
-
-        System.out.println("O consumidor " + this.nome + " já comprou na loja " + produtos.size() + " vez(es).");
-
-    }
-
     // Método que inclui produtos comprados pelo consumidor no sistema.
     public void setProdutos(Produto produto) {
 

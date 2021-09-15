@@ -11,22 +11,6 @@ public class Fornecedor extends Usuario {
         this.produtos = new ArrayList<>();
     }
 
-    public void checkVendas() {
-
-        System.out.println("O fornecedor " + this.nome + " vendeu para a loja " + produtos.size() + " vez(es).");
-
-    }
-
-    public void checkProdutosComprados () {
-
-        System.out.println("==============LISTA DOS PRODUTOS COMPRADOS==============");
-
-        for (Produto produto : produtos) {
-            System.out.println(produto.getNome() + "        " + produto.getEstoque());
-        }
-
-    }
-
     // Método que inclui produtos vendidos pelo fornecedor no sistema.
     public void setProdutos(Produto produto) {
 
@@ -42,6 +26,4 @@ public class Fornecedor extends Usuario {
                 ", email=" + email +
                 ", produtos=" + produtos + '}';
     }
-
-
 }

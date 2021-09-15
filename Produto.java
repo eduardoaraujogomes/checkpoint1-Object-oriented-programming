@@ -13,15 +13,6 @@ public class Produto {
         this.largura = largura;
         this.preco = preco;
         this.estoque = estoque;
-
-    }
-
-    public void checkCompras() {
-
-    }
-
-    public void checkVendas() {
-
     }
 
     @Override

@@ -16,7 +16,6 @@ public class Funcionario extends Usuario {
         this.acesso = acesso;
     }
 
-
     // Subscrição dos métodos na superclasse para realizar a compra e venda dos produtos.
     // Essas compras e vendas são realizadas pelo funcionário da empresa.
     @Override
@@ -26,9 +25,8 @@ public class Funcionario extends Usuario {
         produto.setEstoque(quantidade);
         fornecedor.setProdutos(produto);
 
-
+        System.out.printf("O valor total da compra foi de R$ %.2f.\n", (quantidade * produto.getPreco()));
     }
-
 
     @Override
     public void venderConsumidor (Consumidor consumidor, Produto produto, int quantidade) {
@@ -40,8 +38,10 @@ public class Funcionario extends Usuario {
             produto.setEstoque(-(quantidade));
             consumidor.setProdutos(produto);
 
-        }
+            System.out.printf("O valor total da venda foi de R$ %.2f.\n", (quantidade * produto.getPreco()));
 
+            System.out.println("Venda realizada com sucesso!");
+        }
     }
 
     @Override

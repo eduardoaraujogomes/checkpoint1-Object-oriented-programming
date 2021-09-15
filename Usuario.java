@@ -17,7 +17,6 @@ public abstract class Usuario {
         this.endereco = endereco;
         this.contato = contato;
         this.email = email;
-
     }
 
     Usuario(String nome, String cpf_cnpj, String contato) {

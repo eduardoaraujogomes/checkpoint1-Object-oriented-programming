@@ -9,13 +9,11 @@ public class Main {
     static ArrayList<Fornecedor> fornecedores = new ArrayList<>();
     static ArrayList<Consumidor> consumidores = new ArrayList<>();
     static ArrayList<Produto> produtos = new ArrayList<>();
-    static ArrayList<Produto> listaProdutosVendaCompra = new ArrayList<>();
 
     // Abaixo estãoa s funções aplicadas na main.
 
     private static double calcValorTotal (int quantidade, double preco) {
         return  quantidade * preco;
-
     }
 
     private static void cadastrarFuncionario() {
@@ -48,7 +46,6 @@ public class Main {
         Funcionario funcionario = new Funcionario(nome, cpf, endereco, contato, email, senha, cargo, acesso);
         funcionarios.add(funcionario);
         System.out.println("Funcionário cadastrado com sucesso!");
-
     }
 
     private static void cadastrarFornecedor() {
@@ -56,7 +53,7 @@ public class Main {
         System.out.print("Digite o nome: ");
         String nome = input.nextLine();
 
-        System.out.print("Digite o CPF: ");
+        System.out.print("Digite o CPF ou CNPJ: ");
         String cpf = input.next();
 
         System.out.print("Digite o endereço: ");
@@ -72,7 +69,6 @@ public class Main {
         Fornecedor fornecedor = new Fornecedor(nome, cpf, endereco, contato, email);
         fornecedores.add(fornecedor);
         System.out.println("Fornecedor cadastrado com sucesso!");
-
     }
 
     private static void cadastrarConsumidor() {
@@ -97,7 +93,6 @@ public class Main {
 
         consumidores.add(consumidor);
         System.out.println("Consumidor cadastrado com sucesso!");
-
     }
 
     private static void cadastrarProduto() {
@@ -121,7 +116,6 @@ public class Main {
         Produto produto = new Produto(nome, comprimento, largura, preco, estoque);
         produtos.add(produto);
         System.out.println("Produto cadastrado com sucesso!");
-
     }
 
     public static void realizarVenda() {
@@ -141,16 +135,12 @@ public class Main {
         int quantidade = input.nextInt();
 
         Produto produto = Main.produtos.get(produtoVenda);
-        listaProdutosVendaCompra.add(produto);
 
         Funcionario funcionario = Main.funcionarios.get(0);
         Consumidor consumidor = Main.consumidores.get(consumidorVenda);
 
         funcionario.venderConsumidor(consumidor, produto, quantidade);
 
-        System.out.println("O valor total da venda foi de R$ " + calcValorTotal(quantidade, produto.getPreco()) + ". ");
-
-        System.out.println("Venda realizada com sucesso!");
     }
 
     public static void realizarCompra() {
@@ -174,7 +164,7 @@ public class Main {
         Produto produto = Main.produtos.get(produtoCompra);
         funcionario.comprarFornecedor(fornecedor, produto, quantidade);
 
-        System.out.println("O valor total da compra foi de R$ " + calcValorTotal(quantidade, produto.getPreco()) + ". ");
+        System.out.printf("O valor total da venda foi de R$ %.2f.\n", calcValorTotal(quantidade, produto.getPreco()));
 
         System.out.println("Compra realizada com sucesso!");
     }
@@ -183,7 +173,7 @@ public class Main {
         System.out.println("====================================ESTOQUE====================================");
 
         for (Produto produto : produtos) {
-            System.out.println("NOME: " + produto.getNome() + " - QUANTIDADE: " + produto.getEstoque());
+            System.out.println("PRODUTO: " + produto.getNome() + " - QUANTIDADE: " + produto.getEstoque());
         }
         System.out.println("====================================ESTOQUE====================================");
     }
@@ -250,7 +240,7 @@ public class Main {
                                 "\t5 - Realizar Venda\n" +
                                 "\t6 - Realizar Compra\n" +
                                 "\t7 - Verificar Estoque\n" +
-                                "\t9 - Sair\n");
+                                "\t0 - Sair\n");
             System.out.print("Resposta: ");
             Scanner input = new Scanner(System.in);
             int awnser = input.nextInt();
@@ -285,9 +275,7 @@ public class Main {
                     verificarEstoque();
                     break;
 
-                case 8:
-
-                case 9:
+                case 0:
                     System.out.println("=========== PROGRAMA ENCERRADO ===========");
                     variable = false;
                     break;
