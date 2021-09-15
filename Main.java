@@ -167,9 +167,9 @@ public class Main {
 
     public static void verificarEstoque() {
         System.out.println("====================================ESTOQUE====================================");
-        System.out.println("===NOME======================================================QUANTIDADE========");
+
         for (Produto produto : produtos) {
-            System.out.println(produto.getNome() + "       " + produto.getEstoque());
+            System.out.println("NOME: " + produto.getNome() + " - QUANTIDADE: " + produto.getEstoque());
         }
         System.out.println("====================================ESTOQUE====================================");
     }
