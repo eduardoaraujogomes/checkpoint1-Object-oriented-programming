@@ -17,7 +17,7 @@ o cadastro de produtos, a venda a clientes e a compra de materiais em fornecedor
 
 ## Diagrama UML
 
-![Diagrama UML](https://i.imgur.com/4Qga2w2.jpg)*Diagrama UML*
+![Diagrama UML](https://i.imgur.com/lI1636E.jpg)*Diagrama UML*
 
 
 ## Requisitos:
