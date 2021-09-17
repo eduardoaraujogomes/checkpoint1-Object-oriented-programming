@@ -1,4 +1,5 @@
-# Checkpoint I - POO
+# Checkpoint I - POO 
+- [Respositório no GitHub] (https://github.com/eduardoaraujogomes/checkpoint1-POO)
 
 ## Integrantes
 - [Eduardo de Araújo](https://github.com/eduardoaraujogomes)
